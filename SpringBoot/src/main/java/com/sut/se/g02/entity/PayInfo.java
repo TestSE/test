@@ -21,22 +21,22 @@ import java.util.Collection;
 @Data
 @Table(name = "PayInfo")
 public class PayInfo {
-	@Id
-	@SequenceGenerator(name="payInfo_seq",sequenceName="payInfo_seq")
+    @Id
+    @SequenceGenerator(name="payInfo_seq",sequenceName="payInfo_seq")
     @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="payInfo_seq")
     @Column(name="PayInfo_ID")
-	private @NotNull Long id;
-	private @NotNull Timestamp dateandtime;
+    private @NotNull Long id;
+    private @NotNull Timestamp dateandtime;
     
     @NotNull
     @Pattern(regexp = "[-a-zA-Z0-9ก-๛\\s\\t]+")
     @Size(min = 1, max = 30 )
     private  String note;
-	
-	public PayInfo() {}
+    
+    public PayInfo() {}
 
 
-	@ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "Nurse_ID", insertable = true)
     private  Nurse nurse;
 
