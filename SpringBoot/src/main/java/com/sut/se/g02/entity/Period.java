@@ -18,7 +18,7 @@ public class Period {
     @SequenceGenerator(name="period_seq",sequenceName="period_seq")
     @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="period_seq")
     @Column(name="idPeriod")
-    private @NonNull Long id;
+    private @NonNull Long periodId;
     private @NonNull String periods;
 
     public Period(){
